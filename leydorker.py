@@ -1,11 +1,71 @@
-# Python code obfuscated by www.development-tools.net 
- 
+# author rahmanralei
+# https://t.me/rahmanralei
 
-import base64, codecs
-magic = 'SD0nZG9ya2VyLnR4dCcKRj1pbnB1dApCPXByaW50CmltcG9ydCByZXF1ZXN0cyxjbG91ZHNjcmFwZXIgYXMgSSxvcyxyYW5kb20KZnJvbSBuYWdvb2dsZXNlYXJjaCBpbXBvcnQgbmFnb29nbGVzZWFyY2ggYXMgSgpmcm9tIGJzNCBpbXBvcnQgQmVhdXRpZnVsU291cCBhcyBLCkw9SS5jcmVhdGVfc2NyYXBlcigpCk09J2NsZWFyJwpOPSdjbHMnCm9zLnN5c3RlbShbTSxOXVtvcy5uYW1lPT0nbnQnXSkKQignXG4rLS0tLS0tLS0tWyBHcmFiYmVyIERvbWFpbiBCeSBEb3JraW5nIF0tLS0tLS0tLS0rXG4rI'
-love = 'RS1qTuipvNtVPNtVPNtVPN6VSWunT1uovOFLJkynFNtVPNtVPNtVPNtVPNtVPNeKT4eVSEyoTIapzSgVPNtVPNtVPN6VUDhoJHipzSboJShpzSfMJxtVPNtVPNtVPNtVPNeKT4eYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0gYF0eKT4aXDcQCHLbW1f/KFOcoaO1qPOxo3WeBvNaXDcUCHLbW1f/KFOyrUEyoaAco24tMT9gLJyhVPbbYzAioFjtLJZhnJDfVP5aol5cMPjtMTkfXGbtWlxXGm1TXPqoC10tpTSaMFOiovOao29aoTH6VPpcPaOlnJ50XPxXHQ0kZQNXDG1zVzu0qU'
-god = 'BzOi8vd3d3Lmdvb2dsZS5jb20vc2VhcmNoP3E9e0N9JTIwc2l0ZTp7R30rLWludXJsOiorLXNpdGU6Z29vZ2xlLmNvbSstc2l0ZTpnb29nbGUuY28uaWQmbnVtPXtQfSZzdGFydD17T30iClE9eydVc2VyLUFnZW50JzpKLmdldF9yYW5kb21fdXNlcl9hZ2VudCgpfQpSPUwuZ2V0KEEsaGVhZGVycz1RKS50ZXh0ClM9SyhSLCdodG1sLnBhcnNlcicpClQ9Uy5maW5kX2FsbCgnYScsaHJlZj1UcnVlKQpEPXNldCgpCmZvciBVIGluIFQ6CglBPVVbJ2hyZWYnXQoJaWYgQS5zdGFydHN3aXRoKCdodHRwJylhbmQ'
-destiny = 'toz90VRRhp3EupaEmq2y0nPtanUE0pUZ6Yl93MJWwLJAbMF5ao29aoTI1p2IlL29hqTIhqP5wo20aXGbXPDyQCHRhp3OfnKDbWl8aXIflKDbWPJyzVRZhMJ5xp3qcqTtbElx6EP5uMTDbDlxXMz9lVRHtnJ4tEQcPXTLv4bPvVUgSsFVcPaqcqTtto3OyovuVYPq3WlyuplOJBtbWMz9lVRHtnJ4tEQcJYaqlnKEyXTLvr0I9KT4vXDc3nKEbVT9jMJ4bFPyuplOKByt9Il5lMJSxoTyhMKZbXGgPXTLvKT4gVSEiqTSfBvO7oTIhXUAyqPuLXFy9VREioJScoaZvXGgPXTLvYFOGLKMyMPNgCvOxo3WeMKVhqUu0Vvx='
-joy = '\x72\x6f\x74\x31\x33'
-trust = eval('\x6d\x61\x67\x69\x63') + eval('\x63\x6f\x64\x65\x63\x73\x2e\x64\x65\x63\x6f\x64\x65\x28\x6c\x6f\x76\x65\x2c\x20\x6a\x6f\x79\x29') + eval('\x67\x6f\x64') + eval('\x63\x6f\x64\x65\x63\x73\x2e\x64\x65\x63\x6f\x64\x65\x28\x64\x65\x73\x74\x69\x6e\x79\x2c\x20\x6a\x6f\x79\x29')
-eval(compile(base64.b64decode(eval('\x74\x72\x75\x73\x74')),'<string>','exec'))
+import requests
+import cloudscraper
+import os
+import random
+from nagooglesearch import nagooglesearch
+from bs4 import BeautifulSoup
+
+scraper = cloudscraper.create_scraper()
+linux = 'clear'
+windows = 'cls'
+os.system([linux, windows][os.name == 'nt'])
+
+print("""
++---------[ Grabber Domain By Dorking ]---------+
++ Author          : Rahman Ralei                +
++ Telegram        : t.me/rahmanralei            +
++-----------------------------------------------+
+""")
+
+dork = input('[?] input dork: ')
+extdom = input('[?] extension domain *(.com, ac.id, .go.id, dll): ')
+page = input('[?] page on google: ')
+use_proxy = input('[?] Use proxy? (Y/N): ')
+
+print('')
+
+max_results = 100
+
+url = f'https://www.google.com/search?q={dork}%20site:{extdom}+-inurl:*+-site:google.com+-site:google.co.id&num={max_results}&start={page}'
+
+headers = {
+    'User-Agent': nagooglesearch.get_random_user_agent()
+}
+
+proxies = {}
+
+if use_proxy.lower() == 'y':
+    proxy_type = input('[?] Proxy type (http/https): ')
+    proxy_host = input('[?] Proxy host/IP: ')
+    proxy_port = input('[?] Proxy port: ')
+    
+    proxies = {
+        proxy_type.lower(): f'{proxy_host}:{proxy_port}'
+    }
+
+response = scraper.get(url, headers=headers, proxies=proxies).text
+soup = BeautifulSoup(response, 'html.parser')
+results = soup.find_all('a', href=True)
+domains = set()
+
+for result in results:
+    url = result['href']
+    if url.startswith('http') and not url.startswith('https://webcache.googleusercontent.com'):
+        dork = url.split('/')[2]
+        if dork.endswith(extdom):
+            domains.add(dork)
+            
+for domain in domains:
+    print(f"• {domain}")
+    
+with open('dorker.txt', 'a') as file:
+    for domain in domains:
+        file.write(f"{domain}\n")
+
+with open('dorker.txt') as ff:
+    rescount = ff.readlines()
+    print(f"\n- Total: {len(set(rescount))} Domains")
+    print(f"- Saved -> dorker.txt")
